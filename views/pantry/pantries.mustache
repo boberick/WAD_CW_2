@@ -1,0 +1,30 @@
+{{>header}}
+{{>navbar}}
+<body>
+<div class="container">
+    <h1>List of Pantries</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Pantry</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Postcode</th>
+                <th>Telephone</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#users}}
+            <tr>
+                <td class='name' id='name'>{{name}}</td>
+                <td class='email' id='email'>{{email}}</td>
+                <td class='address' id='address'>{{address}}</td>
+                <td class='postcode' id='postcode'>{{postcode}}</td>
+                <td class='telephone' id='telephone'>{{telephone}}</td>
+            </tr>
+            {{/users}}
+        </tbody>
+    </table>
+</div>
+{{>footer}}
+</body>

@@ -1,0 +1,30 @@
+{{>header}}
+{{>navbar}}
+<body>
+    <div class="container">
+    <h1>List of Users</h1>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{#users}}
+        <tr>
+          <td class='name' id='name'>{{name}}</td>
+          <td class='email' id='email'>{{email}}</a></td>
+          <td>
+            <form action="/user/users" method="post">
+              <input type="hidden" name="userId" id='userId' value="{{_id}}">
+              <button class="btn rounded-pill btn-danger" type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+      {{/users}}
+      </tbody>
+    </table>
+  </div>
+{{>footer}}
+</body>

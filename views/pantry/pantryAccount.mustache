@@ -1,0 +1,28 @@
+{{>header}}
+{{>navbar}}
+<body>
+    <div class="container">
+    <h1>{{pantry}}'s Claimed Donations</h1> 
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Harvest Date</th>
+          <th>Description</th>
+          <th>Name</th>
+          <th>Published Date</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{#entries}}
+        <tr>
+          <td class='harvestDate' id='harvestDate'>{{harvestDate}}</td>
+          <td class='description' id='description'>{{description}}</a></td>
+          <td class='author' id='author'>{{author}}</td>
+          <td class='publishedDate' id='publishedDate'>{{publishedDate}}</td>
+        </tr>
+      {{/entries}}
+      </tbody>
+    </table>
+  </div>
+{{>footer}}
+</body>

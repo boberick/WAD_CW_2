@@ -1,0 +1,33 @@
+{{>header}}
+{{>navbar}}
+<body>
+    <div class="container">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Message</th>
+          <th>Message Date</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{#posts}}
+        <tr>
+          <td class='name' id='name'>{{name}}</td>
+          <td class='email' id='email'>{{email}}</td>
+          <td class='message' id='message'>{{message}}</td>
+          <td class='messageDate' id='messageDate'>{{messageDate}}</td>
+          <td>
+            <form action="/messages" method="post">
+              <input type="hidden" name="messageId" value="{{_id}}">
+              <button class="btn rounded-pill btn-danger" type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+      {{/posts}}
+      </tbody>
+    </table>
+  </div>
+{{>footer}}
+</body>

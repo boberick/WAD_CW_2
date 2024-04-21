@@ -1,0 +1,24 @@
+{{>header}}
+{{>navbar}}
+<body>
+    <div class="container">
+    <h1>List of Admins</h1>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{#users}}
+        <tr>
+          <td class='name' id='name'>{{name}}</td>
+          <td class='email' id='email'>{{email}}</a></td>
+        </tr>
+      {{/users}}
+      </tbody>
+    </table>
+  </div>
+{{>footer}}
+</body>

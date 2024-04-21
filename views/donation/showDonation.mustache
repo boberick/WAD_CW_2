@@ -1,0 +1,34 @@
+{{>header}}
+{{>navbar}}
+<body>
+    <div class="container">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Harvest Date</th>
+          <th>Description</th>
+          <th>Name</th>
+          <th>Published Date</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{#entry}}
+        <tr>
+          <td class='harvestDate' id='harvestDate'>{{harvestDate}}</td>
+          <td class='description' id='description'>{{description}}</td>
+          <td class='author' id='author'><a href='/donation/:{{author}}'>{{author}}</a></td>
+          <td class='email' id='email'>{{email}}</td>
+          <td class='publishedDate' id='publishedDate'>{{publishedDate}}</td>
+          <td>
+            <form action="/donation/all" method="post">
+              <input type="hidden" name="donationId" value="{{_id}}">
+              <button class="btn rounded-pill btn-danger" type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+      {{/entry}}
+      </tbody>
+    </table>
+  </div>
+{{>footer}}
+</body>
